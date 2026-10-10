@@ -1,0 +1,30 @@
+PLAY WITH FRIENDS ANYWHERE
+
+This package now supports public hosted play. Everyone opens the same HTTPS
+website and joins with a room code; players do not need to share Wi-Fi.
+The updated wording does not make the current local address internet-accessible.
+A public hosted deployment must be completed first.
+
+ONLINE DEPLOYMENT
+Run this game as a Node.js web service, not a static website.
+Use Node.js 22 or later. No external runtime packages are required.
+Start command: node server.mjs
+Build/check command: node --check server.mjs
+Health check: /health
+The server listens on 0.0.0.0 and the host's PORT environment variable.
+Use the hosting platform's HTTPS address for sharing.
+Copy invite link automatically uses the public website address when hosted.
+
+The included render.yaml provides a Render web-service configuration.
+Upload the folder to a Git repository and connect it to your hosting account.
+Do not select a paid plan without reviewing its price.
+Official instructions: https://render.com/docs/web-services
+
+Use exactly ONE running server instance: active rooms live in that instance's
+memory. A restart or redeploy ends current rooms. Multiple instances would
+require shared room storage. Test with two different internet connections
+after deployment, including one phone on cellular data.
+
+LOCAL PLAY
+The existing Windows launcher still works for same-Wi-Fi play. Its lobby
+labels the local preview so friends are not given a false online invitation.

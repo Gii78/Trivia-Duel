@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: trivia-duel
+    runtime: node
+    buildCommand: node --check server.mjs
+    startCommand: node server.mjs
+    healthCheckPath: /health
+    numInstances: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
